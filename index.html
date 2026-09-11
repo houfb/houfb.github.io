@@ -1,21 +1,56 @@
 ﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
     <meta charset="utf-8" />
-    <title>我的主页</title>
+    <title>汤逊先生的主页</title>
+    <link rel="shortcut icon" type="image/x-icon" href="18.ico">
+    <style>
+        html, body {
+            font-size: 14px;
+        }
+
+        [red] {
+            background-color: red;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+            table caption:first-child {
+                text-align: left;
+                font-weight: bold;
+            }
+
+            table caption:nth-child(2) {
+                text-align: left;
+                color: #333;
+                font-size: 80%;
+            }
+
+            table th, table td {
+                text-align: left;
+                border: 1px solid #000;
+            }
+
+            table th {
+                background-color: #eee;
+            }
+    </style>
 </head>
 <body>
-    来测试一下
-
-
-    <h2>下载中心：</h2>
-    <div>
-        <table>
-            <caption>AutoAll</caption>
-            <tr><th>文件名</th><th>下载地址</th></tr>
-            <tr><td>AutoAll_v1.3.3.2.7z</td><td>https://github.com/houfb/AutoAll/blob/main/AutoAll_v1.3.3.2.7z</td></tr>
-        </table>
-    </div>
+    <!--<section>-->
+    <!--<h2>下载中心 Download：</h2>-->
+    <table >
+        <caption>AutoAll</caption>
+        <caption>一个用于实现对进程调度、编排、协作的管理工具，对于Web开发，主要使用其中的Web站点自动更新功能。A tool soft to manage process, for web, more used as a WebUpdater.</caption>
+        <tr><th>文件名</th><th>适用环境</th></tr>
+        <tr><td><a target="_blank" href="https://github.com/houfb/AutoAll/raw/refs/heads/main/AutoAll_v1.3.3.2.7z">AutoAll_v1.3.3.2.7z</a></td><td>Window7+, x64</td></tr>
+    </table>
+    <!--</section>-->
 </body>
 </html>
+<!--<script>
+    setTimeout(() => location.reload(), 3000);
+</script>-->
