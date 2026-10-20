@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title> 
+    <link href="marked.ext.min.css" rel="stylesheet" />
+    <script src="marked.ext.min.js"></script>
+    <style>
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            padding: .5rem;
+        }
+    </style>
+</head>
+<body class="markdown-body">
+</body>
+</html>
+<script>
+    setTimeout(async () => {
+        let fp = new URLSearchParams(window.location.search).get('fp');
+        if (!fp) { fp = 'default.md'; }
+        if (fp.match(/(https?|file|ftp)\:\/\//i)) { return; }
+        let res = await fetch(fp);
+        let vs = await res.text();
+        vs = vs ? marked.decode(vs) : '';
+        if (vs) document.body.innerHTML = vs;
+    }, 1000);
+
+
+    //测试专用
+    /*setTimeout(async () => {
+        let dtsta = Date.now();
+        let res = await fetch('default.md');
+        let vs = await res.text(); //console.log(vs); //let dtsta = Date.now();//debugger
+        let mode = 0;
+        mode |= 2048; //抽离原生HTML标签内容和顶层标签块、统一换行符
+        mode |= 128;  //转义符
+        mode |= 512;  //代码块
+        mode |= 32;   //内联块
+        mode |= 4096; //让双下划线包裹表示下划线
+        mode |= 16;   //使用marked
+        mode |= 256;  //启用·作为列表符
+        mode |= 16384;//回填标签块
+        mode |= 2;    //启用属性扩展
+        mode |= 32768;//回填内容块
+        mode |= 4;    //启用mermaid脑图
+        mode |= 8;    //启用mermaid脑图操作栏
+
+        let options = { mode }; options["debug"] = false;  //debugger
+        //vs = vs.split('\n').slice(99, 120).join('\n').trim();  //console.log(vs); //console.log(txt.slice(0,500));
+        vs = vs ? (marked.decode(vs, options)) : ''; // console.log(vs);
+        if (vs) document.body.innerHTML = vs;//console.log('读渲全程耗时：' + (Date.now() - dtsta) + 'ms');
+    }, 1000);*/
+
+</script>
