@@ -46,7 +46,7 @@ Open the VS options dialog, and find the `JSIntelliSense` node, you can config t
 - Improved performance via extract left root dir from regular expression to lock to scanning destination dir.
   
 ➤ **Version 2.0.0.1**
-- Fixed tip content not showing issue in HTML &lt;script>.
+- Fixed tip content not showing issue in HTML &lt;script&gt;.
 	
 ➤ **Version 2.0.0.0**
 - Complete rewrite for VS2022 and next versions.
